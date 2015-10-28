@@ -1,0 +1,85 @@
+<script>
+function myFunction()
+{
+	var text;
+	if(gender = "male")
+	 	{
+ 		text = "Males are 40% more likely to die of cancer and are 16% more likely to develop cancer." \n "This is due to men being less likely to attend the doctors for early symptons e.g persistant coughing, change in bowel habits or peeing problems."
+ 		} else
+ 		{"Females are more likely to develop Breast Cancer, 1 in 8 women develop this form of the disease." 
+  		}
+
+	switch(age){
+	case 1:
+		age= 1-14;
+		{
+		 text = "There is a 1 in 500 chance of developing cancer." \n "Leukaemia is the most common form of cancer among children ranged between 1 and 14 at 33%." 
+		 }
+	break;
+	case 2:
+		age= 15-24;
+		{
+		if( gender = "male")
+		{
+		text = "Males aged between 15-24 are most popular for developing testicular cancer at 27%."\n "1 in 35 men develop cancer."
+		} else
+		{
+		text = "Females aged between 15-24 are most popular for developing ovarian cancer at 31%."
+		}
+	break;
+	case 3: 
+		age= 25-49; 
+		{
+		if( gender = "male")
+		{
+		text = "Adults aged between 25-49 contribute 10% of all new cancer cases. The most common cancer in men aged between 25-49 is testicular cancer at 15%." \n "1 in 35 men develop cancer."
+		} else
+		{
+		text = "Adults aged between 25-49 contribute 10% of all new cancer cases. There is almost double the amount of cases in women aged 25-49 compared to men of the same age bracket."
+		}
+	break;
+	case 4:
+		age= 50-74;
+		{
+		if(gender = "male")
+		{
+		text = "Over half (53%) of all cancers are diagnosed within the age range of 50-74. This is more than the elderly (75+) because there is more people in this age group" \n "There are slightly more cases diagnosed in males at this age group."
+		} else
+		{
+		text = "Over half (53%) of all cancers are diagnosed within the age range of 50-74. This is more than the elderly (75+) because there is more people in this age group" \n "Around a third of cases diagnosed in females aged between 50-74 is breast cancer."
+		}
+	break;
+	case 5:
+		age = 75+;
+		{
+		"Over a 3rd of cancers diagnosed are elderly people over the age of 75." \n "However incidence rates peak in this level of the population as there is fewer members of this population group than any other." 
+		}
+	break;
+	
+	if( gender= "male" && ethnicity="white")
+		{
+		 text = "Per 100,000 white males 408.2 - 416.8 will get cancer."
+		 } else if( gender= "male" && ethnicity= "black")
+		 {
+		 text = "Per 100,000 african american males 316.7 - 488.3 will get cancer."
+		 } else if( gender= "male" && ethnicity= "asian")
+		 {
+		 text = "Per 100,000 asian males 168.3 - 258.9 will get cancer."
+		 }
+		 
+	if( gender= "female" && ethnicity= "white")
+	{
+		 text = "Per 100,000 white females 351.0 - 358.4 will get cancer."
+		 } else if( gender= "female" && ethnicity= "black")
+		 {
+		 text = "Per 100,000 african american females 215.0 - 322.0 will get cancer."
+		 } else if( gender= "female" && ethnicity= "asian")
+		 {
+		 text = "Per 100,000 asian females 168.4 - 249.8 will get cancer."
+		 }
+	
+		
+		
+		
+
+}

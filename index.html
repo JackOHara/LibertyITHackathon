@@ -91,35 +91,32 @@
                         <fieldset class="form-group">
                             <label for="ethnicityField">Ethnicity</label>
                             <select class="form-control" id="ethnicityField" placeholder="Enter Ethnicity" value= "BLACK">
-                                <option></option>
+                                <option>Select Ethnicity</option>
                                 <option>White</option>
                                 <option>Black</option>
                                 <option>Asian</option>
 
                             </select>
                         </fieldset>
-
-                        <!-- Gender -->
-                        <label for="exampleSelect1">Gender</label>
-                        <fieldset class="radio">
-                            <label>
-                                <input type="radio" name="male" id="maleField" value="0" checked> Male
-                            </label>
-                            <label>
-                                <input type="radio" name="female" id="femaleField" value="option2"> Female
-                            </label>
+                        
+                        <fieldset class="form-group">
+                            <label for="ethnicityField">Gender</label>
+                            <select class="form-control" id="genderField" placeholder="Select Gender" >
+                                <option>Select Gender</option>
+                                <option value = "male">Male</option>
+                                <option value = "female">Female</option>
+                            </select>
                         </fieldset>
-
 
                         <!-- Gender -->
 
                         <p><b>Lifestyle Choices</b></p>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="smokeField"> Do you smoke?
-                            </label>
+                                <input type="checkbox" id="smokeField"> Smoker
+                            </label><br>
                             <label>
-                                <input type="checkbox" id="smokeField"> Do you smoke?
+                                <input type="checkbox" id="smokeField"> Use of tanning beds
                             </label>
                             <label>
                                 <input type="checkbox" id="smokeField"> Do you smoke?
@@ -181,19 +178,72 @@
 
 
     <script>
-        function myFunction() {
-
+        
+   var name;
+   var age;
+   var gender;
+   
+   var ageText;
+        
+   
+   
+   
+   
+   function myFunction() {
+        getInputValues();
+        personalisedStats();
         populateSecondLeft();
         populateSecondLeft2()
         populateSecondRight();
     }
     
+    function personalisedStats(){
+      
+       getAgeText();
+    }
+    
+    function getAgeText(){
+
+        if (age < 15) {
+            ageText = "There is a 1 in 500 chance of developing cancer. \n Leukaemia is the most common form of cancer among children ranged between 1 and 14 at 33%."              
+        } else if(age < 25){
+            if( gender = "male")
+            {
+            ageText = "Males aged between 15-24 are most popular for developing testicular cancer at 27%. \n 1 in 35 men develop cancer."
+            } else
+            {
+            ageText = "Females aged between 15-24 are most popular for developing ovarian cancer at 31%."
+            }
+        } else if(age< 50){
+            if(gender = "male")
+            {
+            ageText = "Over half (53%) of all cancers are diagnosed within the age range of 50-74. This is more than the elderly (75+) because there is more people in this age group \nThere are slightly more cases diagnosed in males at this age group."
+            } else
+            {
+            ageText = "Over half (53%) of all cancers are diagnosed within the age range of 50-74. This is more than the elderly (75+) because there is more people in this age group \n Around a third of cases diagnosed in females aged between 50-74 is breast cancer."
+            }
+        }
+        
+
+        
+        
+    }
+    
+    
+    function getInputValues(){
+        name = document.getElementById('nameField').value
+        age = document.getElementById('ageField').value
+        gender = document.getElementById('genderField').Value
+         
+
+
+    }
     /* function populateFirstRight(){
         document.getElementById("firstpageright").innerHTML = "<h1>Hello M8</h1>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo. </p>        <h2>Hello M8</h2>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo.";
     }*/
     
     function populateSecondLeft(){
-        document.getElementById("secondpageleft").innerHTML = "<h1>Hello M8</h1>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo. </p>        <h2>Hello M8</h2>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo.";
+        document.getElementById("secondpageleft").innerHTML = '<h1 class = "wow bounceIn">populateSecondLeft M8</h1>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur ' + ageText + 'diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo. </p>        <h2>Hello M8</h2>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo.';
     
     }
     
@@ -206,6 +256,15 @@
     document.getElementById("secondbottomright").innerHTML = "<h1>Hello M8</h1>                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo. </p>        <h2>Hello M8</h2> <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in felis varius, condimentum nisl in, viverra arcu. Vestibulum commodo, ante a rhoncus suscipit, urna nisl commodo velit, in efficitur diam neque sit amet risus. Aenean eu luctus augue, eu aliquam massa. Donec egestas eget tortor nec cursus. Donec varius iaculis leo, sit amet hendrerit elit facilisis vel. Morbi elementum ex in lacus tincidunt convallis. Curabitur non dictum urna, id elementum leo.";
     
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </script>
 
 
