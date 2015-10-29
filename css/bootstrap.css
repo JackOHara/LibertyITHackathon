@@ -5651,6 +5651,10 @@ a.list-group-item-danger.active:focus {
 .embed-responsive.embed-responsive-4by3 {
   padding-bottom: 75%;
 }
+
+ul#menu li {
+    display:inline;
+}
 .well {
   min-height: 20px;
   padding: 19px;
